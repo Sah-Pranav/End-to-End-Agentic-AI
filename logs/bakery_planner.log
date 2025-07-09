@@ -1,0 +1,90 @@
+2025-07-09 08:29:20,558 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-07-09 08:31:03,537 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Munich including transportation options and nearby attractions.
+2025-07-09 08:31:47,607 - INFO - bakery_planner - Received query: Estimate the total cost for visiting 3 bakeries in Hamburg including transport and food, and also tell me the current weather there.
+2025-07-09 08:31:49,897 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: '3 bakeries in Hamburg including transport and food'
+2025-07-09 08:32:37,024 - INFO - bakery_planner - Received query: Can you suggest bakeries in a small town called "Bakersville" in Germany and provide their opening hours and weather?
+2025-07-09 08:33:09,739 - INFO - bakery_planner - Received query: Calculate the total cost if I spend 15 EUR on food, 10 EUR on transport, and 5 EUR on extras during a bakery visit.
+2025-07-09 08:34:52,891 - ERROR - bakery_planner - Error in Query Endpoint: Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT
+2025-07-09 08:34:52,893 - INFO - bakery_planner - Received query: Calculate the total cost if I spend 15 EUR on food, 10 EUR on transport, and 5 EUR on extras during a bakery visit.
+2025-07-09 08:37:30,692 - ERROR - bakery_planner - Error in Query Endpoint: Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT
+2025-07-09 08:42:14,384 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items, opening hours, and current weather.
+2025-07-09 08:42:21,522 - ERROR - bakery_planner - Error in Query Endpoint: 'AIMessage' object has no attribute 'get'
+2025-07-09 08:44:06,864 - INFO - bakery_planner - Received query: give me bakery in Berlin
+2025-07-09 08:44:09,354 - ERROR - bakery_planner - Error in Query Endpoint: 'AIMessage' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/main.py", line 39, in query_travel_agent
+    final_state = agentic_graph.invoke(state)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/AGENTIC/lib/python3.11/site-packages/langgraph/pregel/__init__.py", line 2843, in invoke
+    for chunk in self.stream(
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/AGENTIC/lib/python3.11/site-packages/langgraph/pregel/__init__.py", line 2533, in stream
+    for _ in runner.tick(
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/AGENTIC/lib/python3.11/site-packages/langgraph/graph/branch.py", line 169, in _route
+    result = self.path.invoke(value, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/AGENTIC/lib/python3.11/site-packages/langgraph/utils/runnable.py", line 370, in invoke
+    ret = context.run(self.func, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/utils/graph_conditions.py", line 8, in tools_condition
+    content = last_message.get("content", "").lower()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/pranav/Github_projects/AI_BAKERY_PLANNER/AGENTIC/lib/python3.11/site-packages/pydantic/main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AIMessage' object has no attribute 'get'
+During task with name 'agent' and id '3cbfc459-dc63-a8d0-5002-43bcac33fd7b'
+2025-07-09 08:44:09,357 - ERROR - bakery_planner - Error in Query Endpoint: 'AIMessage' object has no attribute 'get'
+2025-07-09 08:46:42,113 - INFO - bakery_planner - Received query: give me bakery in Berlin
+2025-07-09 08:46:44,596 - ERROR - bakery_planner - Error in Query Endpoint: 'AIMessage' object has no attribute 'get'
+2025-07-09 08:50:22,603 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-07-09 08:52:00,677 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Berlin. Include recommended bakeries with their specialties, opening hours, current weather, nearby attractions, transport options, and an estimated total cost for the visit
+2025-07-09 08:53:49,749 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Berlin. Include recommended bakeries with their specialty items, opening hours, current weather, nearby attractions, transportation options, and a total cost estimate for the visit.
+2025-07-09 08:53:49,826 - ERROR - bakery_planner - Failed to initialize GraphBuilder.
+2025-07-09 08:53:49,826 - ERROR - bakery_planner - Error in Query Endpoint: 'PlaceSearchTool' object has no attribute 'place_search_tool_list'
+2025-07-09 08:53:56,044 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Berlin. Include recommended bakeries with their specialty items, opening hours, current weather, nearby attractions, transportation options, and a total cost estimate for the visit.
+2025-07-09 08:53:56,077 - ERROR - bakery_planner - Failed to initialize GraphBuilder.
+2025-07-09 08:53:56,078 - ERROR - bakery_planner - Error in Query Endpoint: 'PlaceSearchTool' object has no attribute 'place_search_tool_list'
+2025-07-09 08:55:05,991 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours
+2025-07-09 08:58:34,297 - INFO - bakery_planner - Received query: provide me bakery in berlin
+2025-07-09 08:58:34,380 - ERROR - bakery_planner - Failed to initialize GraphBuilder.
+2025-07-09 08:58:34,380 - ERROR - bakery_planner - Error in Query Endpoint: name 'os' is not defined
+2025-07-09 08:58:54,532 - INFO - bakery_planner - Received query: provide me bakery in berlin
+2025-07-09 08:59:20,840 - INFO - bakery_planner - Received query: provide me for Frankfurt
+2025-07-09 09:00:32,848 - INFO - bakery_planner - Received query: calculate the expense for bakery in Berlin from frankfurt
+2025-07-09 09:01:21,860 - INFO - bakery_planner - Received query: can u suggest some good bakeries in Frankfurt?
+2025-07-09 09:02:42,366 - INFO - bakery_planner - Received query: provide me a full summary for visit in Berlin with cost , time travel and so on
+2025-07-09 09:17:19,825 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-07-09 09:19:10,684 - ERROR - bakery_planner - Error in CalculatorTool: name 'Berlin' is not defined
+2025-07-09 09:21:08,459 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin
+2025-07-09 11:02:39,301 - INFO - bakery_planner - Received query: give me available bakery in Berlin
+2025-07-09 11:03:13,988 - INFO - bakery_planner - Received query: give me available bakery in Berlin
+2025-07-09 11:04:00,669 - INFO - bakery_planner - Received query: give me available bakery in Berlin
+2025-07-09 11:15:39,266 - INFO - bakery_planner - Received messages: [{'role': 'user', 'content': 'provide me bakery in berlin'}]
+2025-07-09 11:27:10,965 - INFO - bakery_planner - Received data: {'messages': [{'role': 'user', 'content': 'provide me bakery in Berlin'}]}
+2025-07-09 11:27:10,965 - INFO - bakery_planner - User message: provide me bakery in Berlin
+2025-07-09 11:30:30,507 - INFO - bakery_planner - Received data: {'messages': [{'role': 'user', 'content': 'give me bakery in berlin'}]}
+2025-07-09 11:30:30,508 - INFO - bakery_planner - User message: give me bakery in berlin
+2025-07-09 11:30:43,218 - INFO - bakery_planner - Received data: {'messages': [{'role': 'user', 'content': 'provide me cost of bakery in berlin'}]}
+2025-07-09 11:30:43,219 - INFO - bakery_planner - User message: provide me cost of bakery in berlin
+2025-07-09 11:46:24,636 - INFO - bakery_planner - Received query: provide me bakery in berlin
+2025-07-09 11:49:22,983 - INFO - bakery_planner - Received query: Find me bakeries in Berlin
+2025-07-09 11:55:43,240 - INFO - bakery_planner - Received query: provide me bakery in berlin
+2025-07-09 11:57:29,201 - INFO - bakery_planner - Received query: Estimate the total cost for visiting three bakeries in Berlin.
+2025-07-09 11:58:06,804 - INFO - bakery_planner - Received query: give me weather of frankfurt
+2025-07-09 11:59:01,414 - INFO - bakery_planner - Received query: could you give summary for berlin bakery
+2025-07-09 12:20:15,832 - INFO - bakery_planner - Received query: provide me bakery in berlin
+2025-07-09 12:20:35,596 - INFO - bakery_planner - Received query: give me cost for bakery in berlin
+2025-07-09 12:23:02,477 - INFO - bakery_planner - Received query: Plan a bakery tour for me in Hamburg
+2025-07-09 12:24:58,268 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Berlin. Include recommended bakeries with their specialty items, opening hours, current weather, nearby attractions, transportation options, and a total cost estimate for the visit.
+2025-07-09 12:45:40,583 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary for Berlin including 3 bakeries known for their croissants. Please provide their names, specialties, opening hours, real-time weather in Berlin, transport options, nearby attractions, and an estimated total cost for the visit.
+2025-07-09 12:46:11,408 - INFO - bakery_planner - Received query: Find me the top 3 bakeries in Munich that specialize in traditional German bread. Include their opening hours, weather forecast for Munich, transport options from the city center, nearby tourist spots, and an estimate of total costs including food and travel.
+2025-07-09 12:46:37,761 - INFO - bakery_planner - Received query: I want to visit bakeries in Hamburg famous for their desserts and pastries. Create a visit plan with bakery details, specialties, opening hours, weather, transport methods, and a cost breakdown.
+2025-07-09 12:46:58,038 - INFO - bakery_planner - Received query: Generate a bakery tour for Stuttgart focused on croissants and coffee. Provide bakery names, signature items, opening hours, weather conditions, recommended public transport, and approximate expenses.
+2025-07-09 12:47:25,336 - INFO - bakery_planner - Received query: Generate a bakery tour for frankfurt focused on croissants and coffee. Provide bakery names, signature items, opening hours, weather conditions, recommended public transport, and approximate expenses.
+2025-07-09 12:47:43,639 - INFO - bakery_planner - Received query: Help me discover bakeries in Düsseldorf with vegan options. Include bakery details, opening times, weather updates, transportation suggestions, nearby points of interest, and cost estimates.
+2025-07-09 12:48:27,692 - INFO - bakery_planner - Received query: Provide a 1-day bakery itinerary for Nuremberg highlighting local specialties and best bakeries. Include opening hours, weather, transport options, attractions around bakeries, and overall cost estimation.
+2025-07-09 12:48:51,391 - INFO - bakery_planner - Received query: List bakeries in Leipzig that are open on weekends with their specialties, opening hours, current weather, transport options, nearby sightseeing spots, and total cost estimation.
+2025-07-09 12:49:35,528 - INFO - bakery_planner - Received query: Find me the top 3 bakeries in Munich that specialize in traditional German bread. Include their opening hours, weather forecast for Munich, transport options from the city center, nearby tourist spots, and an estimate of total costs including food and travel.
+2025-07-09 12:50:01,373 - INFO - bakery_planner - Received query: I want to visit bakeries in Hamburg famous for their desserts and pastries. Create a visit plan with bakery details, specialties, opening hours, weather, transport methods, and a cost breakdown.
+2025-07-09 12:50:22,957 - INFO - bakery_planner - Received query: Generate a bakery tour for Stuttgart focused on croissants and coffee. Provide bakery names, signature items, opening hours, weather conditions, recommended public transport, and approximate expenses.

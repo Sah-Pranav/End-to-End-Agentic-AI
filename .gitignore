@@ -12,3 +12,7 @@ AGENTIC/
 
 #ENVIRONMET
 .env
+
+#frontend
+frontend/
+application.py

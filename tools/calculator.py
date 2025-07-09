@@ -1,4 +1,6 @@
 from langchain.tools import Tool
+from exception.customexception import handle_tool_exception
+import ast
 
 class CalculatorTool:
     def __init__(self):
@@ -10,9 +12,25 @@ class CalculatorTool:
             )
         ]
 
+    def safe_eval(self, expression: str):
+        try:
+            # Parse expression safely
+            node = ast.parse(expression, mode='eval')
+            for n in ast.walk(node):
+                if not isinstance(n, (ast.Expression, ast.BinOp, ast.UnaryOp,
+                                      ast.Num, ast.Load, ast.operator, ast.unaryop)):
+                    raise ValueError("Unsafe expression")
+            return eval(compile(node, '<string>', 'eval'))
+        except Exception:
+            raise ValueError("Invalid or unsafe expression.")
+
     def basic_calculator(self, expression: str):
         try:
-            result = eval(expression)
+            result = self.safe_eval(expression)
             return f"Result: {result}"
         except Exception as e:
-            return f"Error calculating expression: {e}"
+            return handle_tool_exception("CalculatorTool", e)
+
+if __name__ == "__main__":
+    tool = CalculatorTool()
+    print(tool.basic_calculator("2 + 3 * 4"))

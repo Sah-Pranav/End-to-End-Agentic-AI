@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from utils.config_loader import load_config
 from langchain_groq import ChatGroq
 
+load_dotenv()
 
 class ConfigLoader:
     def __init__(self):
@@ -34,7 +35,7 @@ class ModelLoader(BaseModel):
             print("Loading LLM from Groq..............")
             groq_api_key = os.getenv("GROQ_API_KEY")
             model_name = self.config["llm"]["groq"]["model_name"]
-            llm=ChatGroq(model=model_name, api_key=groq_api_key)
-        
-        return llm
-    
+            llm = ChatGroq(model=model_name, api_key=groq_api_key)
+            return llm
+        else:
+            raise ValueError(f"Unsupported model provider: {self.model_provider}")

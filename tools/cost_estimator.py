@@ -1,4 +1,5 @@
 from langchain.tools import Tool
+from exception.customexception import handle_tool_exception
 
 class CostEstimatorTool:
     def __init__(self):
@@ -11,9 +12,13 @@ class CostEstimatorTool:
         ]
 
     def estimate_expenses(self, expenses: str):
-        """Takes comma-separated expenses like '10,20,5' and returns the total."""
         try:
             amounts = [float(x.strip()) for x in expenses.split(",")]
-            return f"Estimated total expense: {sum(amounts)} EUR"
+            total = sum(amounts)
+            return f"Estimated total expense: {total} EUR"
         except Exception as e:
-            return f"Failed to calculate expenses: {e}"
+            return handle_tool_exception("CostEstimatorTool", e)
+
+if __name__ == "__main__":
+    tool = CostEstimatorTool()
+    print(tool.estimate_expenses("10, 20, 5.5"))
