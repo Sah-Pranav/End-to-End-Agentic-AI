@@ -88,3 +88,79 @@ During task with name 'agent' and id '3cbfc459-dc63-a8d0-5002-43bcac33fd7b'
 2025-07-09 12:49:35,528 - INFO - bakery_planner - Received query: Find me the top 3 bakeries in Munich that specialize in traditional German bread. Include their opening hours, weather forecast for Munich, transport options from the city center, nearby tourist spots, and an estimate of total costs including food and travel.
 2025-07-09 12:50:01,373 - INFO - bakery_planner - Received query: I want to visit bakeries in Hamburg famous for their desserts and pastries. Create a visit plan with bakery details, specialties, opening hours, weather, transport methods, and a cost breakdown.
 2025-07-09 12:50:22,957 - INFO - bakery_planner - Received query: Generate a bakery tour for Stuttgart focused on croissants and coffee. Provide bakery names, signature items, opening hours, weather conditions, recommended public transport, and approximate expenses.
+2025-10-03 16:30:13,096 - INFO - bakery_planner - Received query: give me most popular bakery in munich
+2025-10-03 16:33:41,318 - INFO - bakery_planner - Received query: provide me temperature of Frankfurt?
+2025-10-03 16:34:53,099 - INFO - bakery_planner - Received query: calculate the cost to travel to Frankfurt 
+2025-10-03 16:35:48,382 - INFO - bakery_planner - Received query: single person , train, Würzburg, not required 6 hours after return
+2025-10-03 16:36:51,680 - INFO - bakery_planner - Received query: calculate a cost for a person for travelling to Frankfurt in a train for a single day 
+2025-10-03 16:36:52,996 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<tool_call>{"name":"estimate_expenses","arguments":"calculate a cost for a person for travelling to Frankfurt in a train for a single day"}</tool_call>'}}
+2025-11-19 15:46:39,811 - INFO - bakery_planner - Received query: give me list of top bakery in würzburg
+2025-11-19 15:46:40,232 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': 'The model `deepseek-r1-distill-llama-70b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2025-11-19 15:51:06,013 - INFO - bakery_planner - Received query: Give me top bakery available  in würzburg.
+2025-11-19 15:51:06,271 - ERROR - bakery_planner - Error in Agent Function: Error code: 404 - {'error': {'message': 'The model `llama2-70b-chat` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2025-11-19 15:52:49,486 - INFO - bakery_planner - Received query: Give me top bakery in Würzburg.
+2025-11-19 15:52:49,771 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2025-11-19 15:54:12,319 - INFO - bakery_planner - Received query: Give me top bakery in Würzburg.
+2025-11-19 15:54:12,556 - ERROR - bakery_planner - Error in Agent Function: Error code: 404 - {'error': {'message': 'The model `llama2-70b-chat` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+2025-11-19 15:55:26,116 - INFO - bakery_planner - Received query: Give me top bakery in Würzburg?
+2025-11-19 15:55:26,584 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool search_bakeries did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{"city": "Würzburg"}</function>\n\n'}}
+2025-11-19 15:55:51,711 - INFO - bakery_planner - Received query: what is weather of Würzburg?
+2025-11-19 15:55:52,132 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool get_weather_info did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=get_weather_info>{"city": "Würzburg"}</function>'}}
+2025-11-19 15:56:11,033 - INFO - bakery_planner - Received query: what is weather of Würzburg?
+2025-11-19 15:56:11,481 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool get_weather_info did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=get_weather_info>{"city": "Würzburg"}</function>'}}
+2025-11-19 15:56:30,006 - INFO - bakery_planner - Received query: give me name of bakery in Frankfurt?
+2025-11-19 15:56:30,470 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool search_bakeries did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{"city": "Frankfurt"}</function>'}}
+2025-11-19 16:13:13,567 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:13:14,233 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool search_bakeries did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{"city": "Berlin"}</function>\n\n'}}
+2025-11-19 16:18:20,094 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:24:51,501 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:26:19,157 - INFO - bakery_planner - Received query:  Find me the best bakeries in Würzburg with their speciality items and opening hours.
+2025-11-19 16:26:19,637 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{ "Würzburg" }</function>\n\n'}}
+2025-11-19 16:31:02,357 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:31:14,098 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:31:15,466 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: attempted to call tool 'brave_search' which was not in request.tools", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=brave_search>{"query": "best bakeries in Berlin with specialty items and opening hours"}</function>\n\n'}}
+2025-11-19 16:31:22,297 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:32:01,768 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:32:41,964 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:32:43,415 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:32:59,896 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:35:41,337 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:35:42,877 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:36:05,982 - INFO - bakery_planner - Received query: Find me the best bakeries in Frankfurt with their speciality items and opening hours.
+2025-11-19 16:36:38,098 - INFO - bakery_planner - Received query: Find me the best bakeries in munich with their speciality items and opening hours.
+2025-11-19 16:38:12,544 - INFO - bakery_planner - Received query: Plan a bakery visit itinerary in Munich including transportation options and nearby attractions.
+2025-11-19 16:38:14,122 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Munich'
+2025-11-19 16:38:50,225 - INFO - bakery_planner - Received query: Estimate the total cost for visiting 3 bakeries in Hamburg including transport and food, and also tell me the current weather there.
+2025-11-19 16:38:51,521 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Hamburg'
+2025-11-19 16:38:51,981 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Hamburg'
+2025-11-19 16:38:53,109 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Hamburg'
+2025-11-19 16:39:41,709 - INFO - bakery_planner - Received query: Can you suggest bakeries in a small town called "Bakersville" in Germany and provide their opening hours and weather?
+2025-11-19 16:39:42,942 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Bakersville'
+2025-11-19 16:40:03,342 - INFO - bakery_planner - Received query: yes in essen
+2025-11-19 16:40:04,375 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Essen'
+2025-11-19 16:40:35,026 - INFO - bakery_planner - Received query: yes give me of Düsseldorf
+2025-11-19 16:40:36,416 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Düsseldorf'
+2025-11-19 16:43:08,466 - INFO - bakery_planner - Received query: hi, I am bob
+2025-11-19 16:43:24,811 - INFO - bakery_planner - Received query: what is my name?
+2025-11-19 16:46:32,730 - INFO - bakery_planner - Received query: which is popular bakery item in frankfurt
+2025-11-19 16:46:35,338 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: attempted to call tool 'brave_search' which was not in request.tools", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=brave_search>{"query": "popular bakery item in frankfurt"}</function>'}}
+2025-11-19 16:47:11,585 - INFO - bakery_planner - Received query: which is popular bakery in Frankfurt use the available tool to answer it.
+2025-11-19 16:47:12,563 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Frankfurt'
+2025-11-19 16:49:11,003 - INFO - bakery_planner - Received query: I want a bakery visit plan for Berlin in Germany.  Please provide: - Recommended bakeries with their name, address, and place_id - Specialty items (pastries, breads, desserts) - Opening hours - Real-time weather at each bakery - Nearby attractions or interesting spots - Approximate cost estimate (transportation and food) - Available modes of transport with directions from my location - Total expense estimate - A short, friendly summary of the visit plan  If you cannot get some data from the tools, clearly state it.  Use the tools to fetch live data and avoid guessing.
+2025-11-19 16:49:12,555 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:49:12,556 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:49:12,556 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:49:55,712 - INFO - bakery_planner - Received query: Plan a bakery visit in [CITY NAME], Germany, including recommended bakeries, specialties, opening hours, weather, nearby attractions, transport options, and total cost.   Use tools to fetch live data; if data is unavailable, clearly state it and do not guess.
+2025-11-19 16:49:57,162 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Munich'
+2025-11-19 16:50:25,465 - INFO - bakery_planner - Received query: Plan a bakery visit in berlin, Germany, including recommended bakeries, specialties, opening hours, weather, nearby attractions, transport options, and total cost.   Use tools to fetch live data; if data is unavailable, clearly state it and do not guess.
+2025-11-19 16:50:26,616 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Berlin'
+2025-11-19 16:50:46,057 - INFO - bakery_planner - Received query: Plan a bakery visit in [CITY NAME], Germany, including recommended bakeries, specialties, opening hours, weather, nearby attractions, transport options, and total cost.  
+2025-11-19 16:50:46,548 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool search_bakeries did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{ "city": "Berlin" }</function>\n'}}
+2025-11-19 16:51:03,633 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:51:04,060 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool search_bakeries did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=search_bakeries>{ "city": "Berlin" }</function>\n\n'}}
+2025-11-19 16:51:10,206 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:51:31,233 - INFO - bakery_planner - Received query: Find me the best bakeries in Würzburg with their speciality items and opening hours.
+2025-11-19 16:51:32,311 - ERROR - bakery_planner - Error in CostEstimatorTool: could not convert string to float: 'Würzburg'
+2025-11-19 16:51:32,837 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=brave_search>{"query": "best bakeries Würzburg Germany"}'}}
+2025-11-19 16:55:07,734 - INFO - bakery_planner - Received query: Find me the best bakeries in Berlin with their speciality items and opening hours.
+2025-11-19 16:55:30,626 - INFO - bakery_planner - Received query: give me weather of Würzburg, germany.
