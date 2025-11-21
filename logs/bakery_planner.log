@@ -19,3 +19,4 @@
 2025-11-21 16:27:25,927 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-21 16:27:27,625 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-21 16:27:55,552 - INFO - bakery_planner - Received streaming query: provide me popular hotels and nearby bakery with cost for 2 days in berlin. (Thread: f91e7a8a-1c48-4b97-8679-af462d2f2850)
+2025-11-21 16:34:38,850 - INFO - bakery_planner - Graph initialized successfully.
