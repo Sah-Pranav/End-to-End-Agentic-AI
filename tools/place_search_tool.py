@@ -1,4 +1,4 @@
-from langchain.tools import Tool
+from langchain_core.tools import Tool
 import requests
 import os
 from exception.customexception import handle_tool_exception
@@ -10,28 +10,56 @@ class PlaceSearchTool:
             raise ValueError("Missing GOOGLE_API_KEY environment variable.")
         self.place_search_tool_list = [
             Tool.from_function(
-                name="search_bakeries",
-                description="Search for bakeries in any city in Germany, returning name, address and place_id.",
-                func=self.search_bakeries,
+                name="search_places",
+                description="Search for places (bakeries, hotels, restaurants, etc.) globally. Input should be a specific query like 'croissant in Paris' or 'hotels in Tokyo'.",
+                func=self.search_places,
             )
         ]
 
-    def search_bakeries(self, city: str):
+    def search_places(self, query: str):
         try:
-            url = f"https://maps.googleapis.com/maps/api/place/textsearch/json?query=bakeries+in+{city}&key={self.api_key}"
+            # 1. Try Google Places API first
+            url = f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={self.api_key}"
             response = requests.get(url)
-            if response.status_code != 200:
-                return f"API request failed with status code {response.status_code}"
+            
+            google_results = []
+            if response.status_code == 200:
+                data = response.json()
+                if data.get("results"):
+                    google_results = [
+                        f"{place['name']} ({place['formatted_address']}) | Rating: {place.get('rating', 'N/A')} | place_id: {place['place_id']}"
+                        for place in data["results"][:5]
+                    ]
 
-            data = response.json()
-            if not data.get("results"):
-                return f"No bakery information found for {city}."
+            if google_results:
+                return "\n".join(google_results)
+            
+            # 2. Fallback to Tavily if Google fails or returns nothing
+            # Check for API key first
+            if not os.getenv("TAVILY_API_KEY"):
+                return f"Google Search failed and TAVILY_API_KEY is missing. Cannot perform fallback search for '{query}'."
 
-            places = [
-                f"{place['name']} ({place['formatted_address']}) | place_id: {place['place_id']}"
-                for place in data["results"][:5]
-            ]
-            return "\n".join(places)
+            # Lazy import to avoid circular deps
+            try:
+                from langchain_community.tools.tavily_search import TavilySearchResults
+            except ImportError:
+                try:
+                    from langchain_tavily import TavilySearchResults
+                except ImportError:
+                    return "Google Search failed and 'langchain_community' or 'langchain_tavily' is not installed."
+            
+            tavily_tool = TavilySearchResults(max_results=5)
+            tavily_results = tavily_tool.invoke({"query": query})
+            
+            formatted_tavily = []
+            for result in tavily_results:
+                formatted_tavily.append(f"{result['content']} (Source: {result['url']})")
+                
+            if formatted_tavily:
+                return "Google Search yielded no results. Here are results from the web:\n" + "\n".join(formatted_tavily)
+            
+            return f"No information found for '{query}' using both Google and Web search."
+
         except Exception as e:
             return handle_tool_exception("PlaceSearchTool", e)
 

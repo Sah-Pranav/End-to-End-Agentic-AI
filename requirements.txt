@@ -13,6 +13,9 @@ langchain_tavily
 langchain_groq
 langgraph
 langchain-google-community[places]
+fpdf
+pytest
+langchain_tavily
 
 
 -e .
