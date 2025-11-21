@@ -1,4 +1,4 @@
-from langchain.tools import Tool
+from langchain_core.tools import Tool
 import requests
 import os
 from exception.customexception import handle_tool_exception

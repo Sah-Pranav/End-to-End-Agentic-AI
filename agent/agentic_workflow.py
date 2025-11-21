@@ -1,7 +1,10 @@
+from typing import Dict, Any, List
 from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 from langgraph.graph import StateGraph, MessagesState, END, START
 from langgraph.prebuilt import ToolNode, tools_condition
+from langgraph.checkpoint.memory import MemorySaver
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from tools.weather_info import WeatherInfoTool
 from tools.place_search_tool import PlaceSearchTool
 from tools.calculator import CalculatorTool
@@ -13,11 +16,12 @@ from exception.customexception import handle_general_exception
 from logger.logging import logger
 
 class GraphBuilder:
-    def __init__(self, model_provider="groq"):
+    def __init__(self, model_provider: str = "groq"):
         try:
             self.model_loader = ModelLoader(model_provider=model_provider)
             self.llm = self.model_loader.load_llm()
 
+            # Initialize Tools
             self.weather_tools = WeatherInfoTool()
             self.place_search_tools = PlaceSearchTool()
             self.calculator_tools = CalculatorTool()
@@ -39,30 +43,55 @@ class GraphBuilder:
             self.llm_with_tools = self.llm.bind_tools(tools=self.tools)
             self.graph = None
             self.system_prompt = SYSTEM_PROMPT
+            self.checkpointer = MemorySaver()
+            
+            # Compile graph immediately
+            self.build_graph()
+            
         except Exception as e:
             logger.error("Failed to initialize GraphBuilder.")
             raise e
 
-    def agent_function(self, state: MessagesState):
+    def agent_function(self, state: MessagesState) -> Dict[str, List[BaseMessage]]:
         try:
             user_messages = state["messages"]
-            input_messages = [self.system_prompt] + user_messages
+            
+            # Message Trimming Strategy
+            # Keep the last 10 messages to maintain context without hitting token limits
+            # Always keep the system prompt (added below)
+            MAX_HISTORY = 10
+            if len(user_messages) > MAX_HISTORY:
+                # Keep the first message (if it's important context) and the last MAX_HISTORY
+                # But for simplicity and to ensure recent context is prioritized:
+                trimmed_messages = user_messages[-MAX_HISTORY:]
+            else:
+                trimmed_messages = user_messages
+
+            # Ensure system prompt is always part of the context
+            input_messages = [self.system_prompt] + trimmed_messages
+            
             response = self.llm_with_tools.invoke(input_messages)
-            # response is AIMessage object; add to messages list
-            return {"messages": user_messages + [response]}
+            return {"messages": [response]}
         except Exception as e:
-            return {"messages": state["messages"] + [{"role": "assistant", "content": handle_general_exception("Agent Function", e)}]}
+            error_msg = handle_general_exception("Agent Function", e)
+            return {"messages": [AIMessage(content=error_msg)]}
 
     def build_graph(self):
+        if self.graph is not None:
+            return self.graph
+
         graph_builder = StateGraph(MessagesState)
         graph_builder.add_node("agent", self.agent_function)
         graph_builder.add_node("tools", ToolNode(tools=self.tools))
+        
         graph_builder.add_edge(START, "agent")
         graph_builder.add_conditional_edges("agent", tools_condition)
         graph_builder.add_edge("tools", "agent")
         graph_builder.add_edge("agent", END)
-        self.graph = graph_builder.compile()
+        
+        self.graph = graph_builder.compile(checkpointer=self.checkpointer)
         return self.graph
 
     def __call__(self):
-        return self.build_graph()
+        return self.graph
+
