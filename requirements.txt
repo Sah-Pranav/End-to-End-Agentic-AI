@@ -16,6 +16,4 @@ langchain-google-community[places]
 fpdf
 pytest
 langchain_tavily
-
-
--e .
+#-e .

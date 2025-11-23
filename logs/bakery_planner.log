@@ -92,3 +92,54 @@
 2025-11-23 15:58:14,427 - INFO - bakery_planner - Received streaming query: Hello (Thread: aa787bce-b1dc-4d04-b71c-b15cd4671a2a)
 2025-11-23 15:58:54,094 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-23 16:02:08,263 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:15:53,672 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:16:47,554 - INFO - bakery_planner - Received streaming query: Hi, My name is Thanos (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:17:08,496 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:17:45,763 - INFO - bakery_planner - Received streaming query: Do you have any information about café Mozart? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:08,209 - INFO - bakery_planner - Received streaming query: Do you remember my name? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:24,782 - INFO - bakery_planner - Received streaming query: what is my last name? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:38,380 - INFO - bakery_planner - Received streaming query: my last name is van evert. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:49,201 - INFO - bakery_planner - Received streaming query: no my full name is The Thanos Van Evert. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:19:07,826 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:22:35,849 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:23:10,561 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:23:31,745 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:25:00,736 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 99ae6033-1fa1-46e0-8a9d-5f5159ee4aa1)
+2025-11-23 16:28:47,326 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:29:23,726 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:30:59,803 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: 2df1c22b-3fa9-42c4-ac2b-190d7fb5c70a)
+2025-11-23 16:32:31,936 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:32:33,611 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:32:51,964 - INFO - bakery_planner - Received streaming query: hi my name is bor (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:03,461 - INFO - bakery_planner - Received streaming query: my name is bob (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:11,615 - INFO - bakery_planner - Received streaming query: what is my name (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:30,453 - INFO - bakery_planner - Received streaming query: hello my name is bob (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:18,366 - INFO - bakery_planner - Received streaming query: what is my name (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:32,811 - INFO - bakery_planner - Received streaming query: What is my name? (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:43,972 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:35:59,695 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:38:58,440 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:41:03,592 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:45:01,806 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: 9d196638-d068-489f-914d-0292e03ceb01)
+2025-11-23 16:46:44,421 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:47:42,563 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: c230d7c1-a13f-4aac-aed1-5c900900ccce)
+2025-11-23 16:49:55,770 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:51:53,366 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:51:55,750 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:52:18,349 - INFO - bakery_planner - Received streaming query: Hi my name is bob (Thread: 2cafd2e0-c96f-4972-a8c8-b4d58406e3b9)
+2025-11-23 16:53:58,710 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:54:00,388 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:55:41,355 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:56:38,955 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:58:48,600 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:59:57,570 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:00:05,707 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:02:07,896 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:02:34,025 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:04:07,351 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:04:31,141 - INFO - bakery_planner - Received streaming query: Hi my name is bob. (Thread: df8031e1-1907-44df-8f67-8128ae609da1)
+2025-11-23 17:06:20,958 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:06:52,050 - INFO - bakery_planner - Received streaming query: Hi my name is bob (Thread: 252e5bb4-86b7-4c96-9c75-31123a79a4cb)
+2025-11-23 17:08:02,126 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:08:36,878 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:09:01,155 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: dd2aeb05-c26d-487d-8a15-bc437939e63e)
