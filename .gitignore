@@ -14,5 +14,5 @@ AGENTIC/
 .env
 
 #frontend
- frontend/
- application.py
+frontend/
+application.py
