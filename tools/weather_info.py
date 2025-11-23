@@ -1,7 +1,11 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
 import requests
 import os
 from exception.customexception import handle_tool_exception
+
+class WeatherInfoInput(BaseModel):
+    city: str = Field(description="The city name to get weather forecast for.")
 
 class WeatherInfoTool:
     def __init__(self):
@@ -10,9 +14,10 @@ class WeatherInfoTool:
             raise ValueError("Missing OPENWEATHERMAP_API_KEY environment variable.")
         self.weather_tool_list = [
             Tool.from_function(
-                name="get_weather_info",
-                description="Get real-time weather information for a city in Germany.",
+                name="get_weather",
+                description="Get the current weather and forecast for a city.",
                 func=self.get_weather_info,
+                args_schema=WeatherInfoInput
             )
         ]
 

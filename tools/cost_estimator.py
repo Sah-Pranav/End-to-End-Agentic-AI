@@ -1,5 +1,9 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
 from exception.customexception import handle_tool_exception
+
+class CostEstimatorInput(BaseModel):
+    expenses: str = Field(description="A comma-separated list of numbers (e.g., '10, 20, 5.5') representing individual costs.")
 
 class CostEstimatorTool:
     def __init__(self):
@@ -8,6 +12,7 @@ class CostEstimatorTool:
                 name="estimate_expenses",
                 description="Estimate total expense. Input MUST be a comma-separated list of numbers (e.g., '10, 20, 5.5'). Do NOT input city names or text.",
                 func=self.estimate_expenses,
+                args_schema=CostEstimatorInput
             )
         ]
 

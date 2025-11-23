@@ -1,7 +1,12 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
+from typing import Type
 import requests
 import os
 from exception.customexception import handle_tool_exception
+
+class OpeningHoursInput(BaseModel):
+    place_id: str = Field(description="The place_id of the location to check opening hours for.")
 
 class OpeningHoursCheckerTool:
     def __init__(self):
@@ -13,6 +18,7 @@ class OpeningHoursCheckerTool:
                 name="check_opening_hours",
                 description="Check the opening hours of a bakery given its place_id.",
                 func=self.check_opening_hours,
+                args_schema=OpeningHoursInput
             )
         ]
 

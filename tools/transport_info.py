@@ -1,5 +1,9 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
 from exception.customexception import handle_tool_exception
+
+class TransportInfoInput(BaseModel):
+    city: str = Field(description="The city name to get transport options for.")
 
 class TransportInfoTool:
     def __init__(self):
@@ -8,6 +12,7 @@ class TransportInfoTool:
                 name="get_transport_options",
                 description="Provide available transport modes for a bakery visit in a city.",
                 func=self.get_transport_options,
+                args_schema=TransportInfoInput
             )
         ]
         self.transport_options = {

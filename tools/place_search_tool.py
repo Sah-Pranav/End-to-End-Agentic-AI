@@ -1,7 +1,11 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
 import requests
 import os
 from exception.customexception import handle_tool_exception
+
+class PlaceSearchInput(BaseModel):
+    query: str = Field(description="The search query for places (e.g., 'Bakeries in Berlin', 'Hotels in Paris').")
 
 class PlaceSearchTool:
     def __init__(self):
@@ -11,8 +15,9 @@ class PlaceSearchTool:
         self.place_search_tool_list = [
             Tool.from_function(
                 name="search_places",
-                description="Search for places (bakeries, hotels, restaurants, etc.) globally. Input should be a specific query like 'croissant in Paris' or 'hotels in Tokyo'.",
+                description="Search for places like bakeries, hotels, restaurants, etc. using Google Places API or Tavily fallback.",
                 func=self.search_places,
+                args_schema=PlaceSearchInput
             )
         ]
 

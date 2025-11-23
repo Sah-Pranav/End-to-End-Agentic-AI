@@ -60,6 +60,18 @@ st.markdown("""
         transform: scale(1.02);
     }
     
+    /* PDF Download Button - Better Visibility */
+    .stDownloadButton>button {
+        background-color: #4b8bff !important;
+        color: white !important;
+        border: 2px solid #6ba3ff !important;
+        font-weight: bold !important;
+    }
+    .stDownloadButton>button:hover {
+        background-color: #6ba3ff !important;
+        border-color: #4b8bff !important;
+    }
+    
     /* Headers */
     h1 {
         color: #ff4b4b !important;
@@ -95,29 +107,34 @@ with st.sidebar:
         st.session_state.thread_id = str(uuid.uuid4())
         st.rerun()
     st.info(f"Session ID: {st.session_state.thread_id}")
+    
+    # Push developer badge to bottom with spacer
+    st.markdown("<br>" * 18, unsafe_allow_html=True)
+    
+    # Developer badge at bottom of sidebar
+    st.markdown("""
+    <div style="
+        background: rgba(38, 39, 48, 0.95);
+        padding: 12px 20px;
+        border-radius: 25px;
+        border: 2px solid #4b8bff;
+        text-align: center;
+        transition: all 0.3s ease;
+    " onmouseover="this.style.background='rgba(75, 139, 255, 0.2)'; this.style.borderColor='#6ba3ff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(75, 139, 255, 0.3)';" 
+       onmouseout="this.style.background='rgba(38, 39, 48, 0.95)'; this.style.borderColor='#4b8bff'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <p style="margin: 0; color: #ffffff; font-size: 0.9rem; font-weight: 600;">
+            Developed by <span style="color: #4b8bff; font-weight: bold;">PRANAV</span> 👨‍💻
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Helper for PDF generation (cached to avoid re-generating on every rerun)
 @st.cache_data
 def get_pdf_data(content):
     return generate_pdf(content, return_bytes=True)
 
-# Display Chat History
-for i, message in enumerate(st.session_state.messages):
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-        # Add PDF download button for assistant messages
-        if message["role"] == "assistant":
-            pdf_data = get_pdf_data(message["content"])
-            st.download_button(
-                label="📄 Download PDF",
-                data=pdf_data,
-                file_name=f"itinerary_{i}.pdf",
-                mime="application/pdf",
-                key=f"download_{i}"
-            )
-
-# Chat Input
-if prompt := st.chat_input("Where do you want to go? (e.g., 'Plan a 3-day trip to Tokyo')"):
+# Chat Input - Moved to top
+if prompt := st.chat_input("Ex. Plan a cost-effective trip to Würzburg with recommendations for budget hotels, traditional bakeries, and getting around the city."):
     # Add user message to state
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -129,7 +146,7 @@ if prompt := st.chat_input("Where do you want to go? (e.g., 'Plan a 3-day trip t
         full_response = ""
         
         # Status container for tool updates
-        with st.status("Thinking...", expanded=True) as status:
+        with st.status("🤔 Thinking...", expanded=True) as status:
             try:
                 with requests.post(
                     f"{BASE_URL}/chat/stream", 
@@ -163,7 +180,10 @@ if prompt := st.chat_input("Where do you want to go? (e.g., 'Plan a 3-day trip t
                                                 # Check for final content
                                                 content = msg.get('content', '')
                                                 if content:
-                                                    full_response = content
+                                                    # Remove raw function call tags
+                                                    import re
+                                                    cleaned_content = re.sub(r'<function=.*?>.*?</function>', '', content, flags=re.DOTALL).strip()
+                                                    full_response = cleaned_content if cleaned_content else content
                                                     message_placeholder.markdown(full_response)
 
                                         # Handle Tool Outputs (from 'tools' node)
@@ -177,22 +197,28 @@ if prompt := st.chat_input("Where do you want to go? (e.g., 'Plan a 3-day trip t
                                 except Exception as e:
                                     pass
                 
-                status.update(label="Planning complete!", state="complete", expanded=False)
-                
-                # If we didn't get a clean response from the stream, fallback to the query endpoint
-                if not full_response:
-                    response = requests.post(f"{BASE_URL}/query", json={"question": prompt, "thread_id": st.session_state.thread_id})
-                    if response.status_code == 200:
-                        answer = response.json().get("answer", "")
-                        full_response = answer
-                        message_placeholder.markdown(full_response)
+                status.update(label="✅ Complete!", state="complete", expanded=False)
                 
             except Exception as e:
-                st.error(f"Error: {e}")
+                st.error(f"Error: {str(e)}")
+                full_response = f"Sorry, I encountered an error: {str(e)}"
 
     # Add assistant response to state
     st.session_state.messages.append({"role": "assistant", "content": full_response})
-    
-    # Force a rerun to show the download button for the new message immediately
     st.rerun()
+
+# Display Chat History
+for i, message in enumerate(st.session_state.messages):
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+        # Add PDF download button for assistant messages
+        if message["role"] == "assistant":
+            pdf_data = get_pdf_data(message["content"])
+            st.download_button(
+                label="📄 Download PDF",
+                data=pdf_data,
+                file_name=f"itinerary_{i}.pdf",
+                mime="application/pdf",
+                key=f"download_{i}"
+            )
 

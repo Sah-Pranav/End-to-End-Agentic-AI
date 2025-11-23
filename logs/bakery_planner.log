@@ -19,10 +19,127 @@
 2025-11-21 16:27:25,927 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-21 16:27:27,625 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-21 16:27:55,552 - INFO - bakery_planner - Received streaming query: provide me popular hotels and nearby bakery with cost for 2 days in berlin. (Thread: f91e7a8a-1c48-4b97-8679-af462d2f2850)
-2025-11-21 16:34:38,850 - INFO - bakery_planner - Graph initialized successfully.
-2025-11-23 14:25:09,834 - INFO - bakery_planner - Graph initialized successfully.
-2025-11-23 14:25:54,280 - INFO - bakery_planner - Received streaming query: provide me popular hotels and nearby bakery with cost for 2 days in berlin. (Thread: d59d61d2-390a-49f3-88ee-200523c2f1c1)
-2025-11-23 14:27:34,691 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: d59d61d2-390a-49f3-88ee-200523c2f1c1)
-2025-11-23 14:29:39,195 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
-2025-11-23 14:30:46,232 - INFO - bakery_planner - Received streaming query: Do you information about Killans backery in Würzburg. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
-2025-11-23 18:19:13,311 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:37:30,192 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:40:11,463 - INFO - bakery_planner - Received streaming query: Hi, My Name is Thanos. (Thread: 0ce193ec-a770-4f93-a71d-764923e94fe8)
+2025-11-23 14:41:10,521 - INFO - bakery_planner - Received streaming query: Plan the trip for Würzburg situated in Bavaria. (Thread: 0ce193ec-a770-4f93-a71d-764923e94fe8)
+2025-11-23 14:42:28,305 - INFO - bakery_planner - Received streaming query: Give me opening, cost and transportation to café Mozart. (Thread: 0ce193ec-a770-4f93-a71d-764923e94fe8)
+2025-11-23 14:42:28,840 - ERROR - bakery_planner - Error in Agent Function: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool check_opening_hours did not match schema: errors: [missing properties: '__arg1']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=check_opening_hours>{"place_id": "ChIJL6QwzGKb4EcRQ6l3jJ6bB4"}</function>\n\n'}}
+2025-11-23 14:43:25,020 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:43:59,219 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:44:08,903 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:44:42,227 - ERROR - bakery_planner - Failed to initialize GraphBuilder.
+2025-11-23 14:44:42,227 - ERROR - bakery_planner - Failed to initialize graph: 'CalculatorTool' object has no attribute 'calculate'
+2025-11-23 14:45:08,250 - ERROR - bakery_planner - Failed to initialize GraphBuilder.
+2025-11-23 14:45:08,250 - ERROR - bakery_planner - Failed to initialize graph: 'CalculatorTool' object has no attribute 'calculate'
+2025-11-23 14:45:38,764 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:45:40,377 - ERROR - bakery_planner - Error in CalculatorTool: Invalid or unsafe expression.
+2025-11-23 14:47:28,481 - INFO - bakery_planner - Received streaming query: Give me opening, cost and transportation to café Mozart. (Thread: 0ce193ec-a770-4f93-a71d-764923e94fe8)
+2025-11-23 14:49:10,776 - INFO - bakery_planner - Received streaming query: We were taking about Würzburg but how you change to munich. (Thread: 0ce193ec-a770-4f93-a71d-764923e94fe8)
+2025-11-23 14:51:02,958 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:51:04,603 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:51:50,495 - INFO - bakery_planner - Received streaming query: Hi, My name is Thanos (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:52:42,157 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:53:25,823 - INFO - bakery_planner - Received streaming query: Do you have any information about café Mozart? (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:54:56,702 - INFO - bakery_planner - Received streaming query: Do you remember my name? (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:55:06,413 - INFO - bakery_planner - Received streaming query: what is my last name? (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:55:24,876 - INFO - bakery_planner - Received streaming query: my last name is van evert. (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:56:11,938 - INFO - bakery_planner - Received streaming query: no my full name is The Thanos Van Evert. (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 14:59:18,417 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:02:03,080 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:02:51,598 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:04:05,811 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:04:08,173 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:05:10,640 - INFO - bakery_planner - Received streaming query: What is my full name? (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:08:03,920 - INFO - bakery_planner - Received streaming query: my name is thanos (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:08:17,992 - INFO - bakery_planner - Received streaming query: my name is thanos (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:08:18,256 - ERROR - bakery_planner - Error in CalculatorTool: Invalid or unsafe expression.
+2025-11-23 15:08:47,613 - INFO - bakery_planner - Received streaming query: I am telling you that my name is thanos (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:09:19,485 - INFO - bakery_planner - Received streaming query: hi my name is thanos (Thread: b16de794-62a0-4df7-a442-a7bf1b09787b)
+2025-11-23 15:09:56,444 - INFO - bakery_planner - Received streaming query: hi my name is thanos (Thread: 2b72efa8-2b6a-4a62-95d4-7a65923376ff)
+2025-11-23 15:10:09,814 - INFO - bakery_planner - Received streaming query: what is my name (Thread: 2b72efa8-2b6a-4a62-95d4-7a65923376ff)
+2025-11-23 15:13:08,841 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:19:24,522 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:20:20,725 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:21:12,406 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:21:47,053 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:24:14,638 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:28:02,836 - INFO - bakery_planner - Received streaming query: Hello (Thread: 047a9eac-2e2f-4e7e-86e1-3850f18c4a51)
+2025-11-23 15:28:47,424 - INFO - bakery_planner - Received streaming query: hi my name is thanos (Thread: 047a9eac-2e2f-4e7e-86e1-3850f18c4a51)
+2025-11-23 15:29:34,846 - INFO - bakery_planner - Received streaming query: Hi my name is Thanos (Thread: 2a95c6a2-002a-4e13-bed1-ea5881ac4602)
+2025-11-23 15:31:33,123 - INFO - bakery_planner - Received streaming query: Hello (Thread: test_debug)
+2025-11-23 15:31:33,611 - ERROR - bakery_planner - Error in WeatherInfoTool: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Munich,DE&appid=13e125a55d3dd6ce1b9568a63fa351fa&units=metric (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10a8f1e90>: Failed to resolve 'api.openweathermap.org' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-11-23 15:31:33,611 - ERROR - bakery_planner - Error in WeatherInfoTool: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Hamburg,DE&appid=13e125a55d3dd6ce1b9568a63fa351fa&units=metric (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10a8f2710>: Failed to resolve 'api.openweathermap.org' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-11-23 15:33:23,635 - INFO - bakery_planner - Received streaming query: hi my name thanos (Thread: 047a9eac-2e2f-4e7e-86e1-3850f18c4a51)
+2025-11-23 15:34:56,675 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:37:30,651 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:38:29,257 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:38:31,656 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:39:10,996 - INFO - bakery_planner - Received streaming query: Hello (Thread: fd0abbf0-5e2d-46f2-a132-577a8e92f2f3)
+2025-11-23 15:40:15,950 - INFO - bakery_planner - Received streaming query: hello my name is john (Thread: fd0abbf0-5e2d-46f2-a132-577a8e92f2f3)
+2025-11-23 15:41:42,162 - INFO - bakery_planner - Received streaming query: Hello (Thread: test_debug)
+2025-11-23 15:44:37,582 - INFO - bakery_planner - Received streaming query: Hello (Thread: f7a7cabd-6e5b-4baf-b3b4-7893d75ed5ba)
+2025-11-23 15:45:35,043 - INFO - bakery_planner - Received streaming query: Hello (Thread: 64b3756c-e9e4-44f0-81f3-1e3f70ca72b4)
+2025-11-23 15:46:19,500 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:46:41,486 - INFO - bakery_planner - Received streaming query: hello (Thread: 64b3756c-e9e4-44f0-81f3-1e3f70ca72b4)
+2025-11-23 15:48:10,433 - INFO - bakery_planner - Received streaming query: Hello (Thread: curl_test)
+2025-11-23 15:48:12,218 - INFO - bakery_planner - Received streaming query: Hello (Thread: curl_test)
+2025-11-23 15:52:01,607 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:52:13,995 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:52:15,338 - INFO - bakery_planner - Received streaming query: Hello (Thread: test_debug)
+2025-11-23 15:54:08,479 - INFO - bakery_planner - Received streaming query: hi (Thread: 6d77d5b0-cb00-48b0-b89a-4382a22626ce)
+2025-11-23 15:57:16,610 - INFO - bakery_planner - Received streaming query: Hello (Thread: 56bc36f9-dccb-43be-9aa3-bc2c7cfc29df)
+2025-11-23 15:58:13,348 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 15:58:14,427 - INFO - bakery_planner - Received streaming query: Hello (Thread: aa787bce-b1dc-4d04-b71c-b15cd4671a2a)
+2025-11-23 15:58:54,094 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:02:08,263 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:15:53,672 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:16:47,554 - INFO - bakery_planner - Received streaming query: Hi, My name is Thanos (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:17:08,496 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:17:45,763 - INFO - bakery_planner - Received streaming query: Do you have any information about café Mozart? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:08,209 - INFO - bakery_planner - Received streaming query: Do you remember my name? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:24,782 - INFO - bakery_planner - Received streaming query: what is my last name? (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:38,380 - INFO - bakery_planner - Received streaming query: my last name is van evert. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:18:49,201 - INFO - bakery_planner - Received streaming query: no my full name is The Thanos Van Evert. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:19:07,826 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:22:35,849 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:23:10,561 - INFO - bakery_planner - Received streaming query: So, What are the places to visit in Würzburg, can u generate itinerary for me along with affordable hotels, bakery and transportation. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:23:31,745 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 30f5128a-e9ea-4714-9421-540e31b44a79)
+2025-11-23 16:25:00,736 - INFO - bakery_planner - Received streaming query: Plan A trip for Würzburg city situated in Bavaria germany. (Thread: 99ae6033-1fa1-46e0-8a9d-5f5159ee4aa1)
+2025-11-23 16:28:47,326 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:29:23,726 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:30:59,803 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: 2df1c22b-3fa9-42c4-ac2b-190d7fb5c70a)
+2025-11-23 16:32:31,936 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:32:33,611 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:32:51,964 - INFO - bakery_planner - Received streaming query: hi my name is bor (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:03,461 - INFO - bakery_planner - Received streaming query: my name is bob (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:11,615 - INFO - bakery_planner - Received streaming query: what is my name (Thread: e288d647-216f-41fa-8fba-bf2f345e714f)
+2025-11-23 16:33:30,453 - INFO - bakery_planner - Received streaming query: hello my name is bob (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:18,366 - INFO - bakery_planner - Received streaming query: what is my name (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:32,811 - INFO - bakery_planner - Received streaming query: What is my name? (Thread: ac802100-5dfc-45c8-ae97-526740a0e854)
+2025-11-23 16:35:43,972 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:35:59,695 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:38:58,440 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:41:03,592 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:45:01,806 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: 9d196638-d068-489f-914d-0292e03ceb01)
+2025-11-23 16:46:44,421 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:47:42,563 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: c230d7c1-a13f-4aac-aed1-5c900900ccce)
+2025-11-23 16:49:55,770 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:51:53,366 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:51:55,750 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:52:18,349 - INFO - bakery_planner - Received streaming query: Hi my name is bob (Thread: 2cafd2e0-c96f-4972-a8c8-b4d58406e3b9)
+2025-11-23 16:53:58,710 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:54:00,388 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:55:41,355 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:56:38,955 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:58:48,600 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 16:59:57,570 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:00:05,707 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:02:07,896 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:02:34,025 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:04:07,351 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:04:31,141 - INFO - bakery_planner - Received streaming query: Hi my name is bob. (Thread: df8031e1-1907-44df-8f67-8128ae609da1)
+2025-11-23 17:06:20,958 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:06:52,050 - INFO - bakery_planner - Received streaming query: Hi my name is bob (Thread: 252e5bb4-86b7-4c96-9c75-31123a79a4cb)
+2025-11-23 17:08:02,126 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:08:36,878 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 17:09:01,155 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: dd2aeb05-c26d-487d-8a15-bc437939e63e)
