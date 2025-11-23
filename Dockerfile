@@ -19,16 +19,19 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Expose ports
-# 8000 for FastAPI backend
-# 8501 for Streamlit frontend
-EXPOSE 8000 8501
+# Set environment variable for backend URL (used in container)
+ENV BASE_URL=http://localhost:8001
 
-# Create startup script
+# Expose port 8000 (Azure Web Apps use this for Streamlit)
+EXPOSE 8000
+
+# Create startup script that runs both services
+# FastAPI on port 8001 (internal), Streamlit on port 8000 (external)
 RUN echo '#!/bin/bash\n\
-uvicorn main:app --host 0.0.0.0 --port 8000 &\n\
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0\n\
+uvicorn main:app --host 0.0.0.0 --port 8001 &\n\
+streamlit run app.py --server.port 8000 --server.address 0.0.0.0\n\
 ' > /app/start.sh && chmod +x /app/start.sh
 
 # Run the startup script
 CMD ["/app/start.sh"]
+

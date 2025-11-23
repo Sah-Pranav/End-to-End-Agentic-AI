@@ -16,3 +16,6 @@ AGENTIC/
 #frontend
 frontend/
 application.py
+
+#logs
+logs/
