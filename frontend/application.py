@@ -55,13 +55,5 @@ async def proxy_chat_stream(query: QueryRequest):
 
     return StreamingResponse(stream_proxy(), media_type="text/event-stream")
 
-@app.post("/test/stream")
-async def test_stream(query: QueryRequest):
-    logger.info("Received test stream request")
-    async def generator():
-        yield f"data: {json.dumps({'agent': {'messages': [{'content': 'TEST_SUCCESS', 'tool_calls': []}]}})}\n\n".encode()
-        yield b"data: [DONE]\n\n"
-    return StreamingResponse(generator(), media_type="text/event-stream")
-
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=3000)
