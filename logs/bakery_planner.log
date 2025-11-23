@@ -25,3 +25,4 @@
 2025-11-23 14:27:34,691 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: d59d61d2-390a-49f3-88ee-200523c2f1c1)
 2025-11-23 14:29:39,195 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
 2025-11-23 14:30:46,232 - INFO - bakery_planner - Received streaming query: Do you information about Killans backery in Würzburg. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
+2025-11-23 18:19:13,311 - INFO - bakery_planner - Graph initialized successfully.
