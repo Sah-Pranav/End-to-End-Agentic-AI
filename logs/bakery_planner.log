@@ -20,3 +20,8 @@
 2025-11-21 16:27:27,625 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-21 16:27:55,552 - INFO - bakery_planner - Received streaming query: provide me popular hotels and nearby bakery with cost for 2 days in berlin. (Thread: f91e7a8a-1c48-4b97-8679-af462d2f2850)
 2025-11-21 16:34:38,850 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:25:09,834 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-23 14:25:54,280 - INFO - bakery_planner - Received streaming query: provide me popular hotels and nearby bakery with cost for 2 days in berlin. (Thread: d59d61d2-390a-49f3-88ee-200523c2f1c1)
+2025-11-23 14:27:34,691 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: d59d61d2-390a-49f3-88ee-200523c2f1c1)
+2025-11-23 14:29:39,195 - INFO - bakery_planner - Received streaming query: provide me popular bakery nearby hotels and transportation cost from bahnhof within Würzburg, Germany. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
+2025-11-23 14:30:46,232 - INFO - bakery_planner - Received streaming query: Do you information about Killans backery in Würzburg. (Thread: 23a14739-293a-4bf5-9d12-8064d52c4dd0)
