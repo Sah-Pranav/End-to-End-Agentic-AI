@@ -1,5 +1,9 @@
 from langchain_core.tools import Tool
+from pydantic import BaseModel, Field
 from exception.customexception import handle_tool_exception
+
+class ItineraryGeneratorInput(BaseModel):
+    city: str = Field(description="The city name to generate an itinerary for.")
 
 class ItineraryGeneratorTool:
     def __init__(self):
@@ -8,6 +12,7 @@ class ItineraryGeneratorTool:
                 name="generate_bakery_itinerary",
                 description="Generate a simple itinerary for visiting 2-3 bakeries in a city.",
                 func=self.generate_bakery_itinerary,
+                args_schema=ItineraryGeneratorInput
             )
         ]
 

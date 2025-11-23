@@ -1,14 +1,20 @@
 from langchain_core.tools import Tool
-from exception.customexception import handle_tool_exception
+from pydantic import BaseModel, Field
 import ast
+import operator
+from exception.customexception import handle_tool_exception
+
+class CalculatorInput(BaseModel):
+    expression: str = Field(description="The mathematical expression to evaluate (e.g., '2 + 2', '100 * 0.15').")
 
 class CalculatorTool:
     def __init__(self):
         self.calculator_tool_list = [
             Tool.from_function(
-                name="basic_calculator",
-                description="Simple calculator for addition, subtraction, multiplication, and division.",
-                func=self.basic_calculator,
+                name="calculate",
+                description="Perform basic mathematical calculations.",
+                func=self.calculate,
+                args_schema=CalculatorInput
             )
         ]
 
@@ -24,7 +30,7 @@ class CalculatorTool:
         except Exception:
             raise ValueError("Invalid or unsafe expression.")
 
-    def basic_calculator(self, expression: str):
+    def calculate(self, expression: str):
         try:
             result = self.safe_eval(expression)
             return f"Result: {result}"
@@ -33,4 +39,4 @@ class CalculatorTool:
 
 if __name__ == "__main__":
     tool = CalculatorTool()
-    print(tool.basic_calculator("2 + 3 * 4"))
+    print(tool.calculate("2 + 3 * 4"))

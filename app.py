@@ -190,9 +190,9 @@ if prompt := st.chat_input("Where do you want to go? (e.g., 'Plan a 3-day trip t
             except Exception as e:
                 st.error(f"Error: {e}")
 
-    # Add assistant response to state
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
-    
-    # Force a rerun to show the download button for the new message immediately
-    st.rerun()
+    # Add assistant response to state ONLY if it's not empty
+    if full_response:
+        st.session_state.messages.append({"role": "assistant", "content": full_response})
+        # Force a rerun to show the download button for the new message immediately
+        st.rerun()
 
