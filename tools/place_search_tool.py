@@ -40,7 +40,6 @@ class PlaceSearchTool:
                 return "\n".join(google_results)
             
             # 2. Fallback to Tavily if Google fails or returns nothing
-            # Check for API key first
             if not os.getenv("TAVILY_API_KEY"):
                 return f"Google Search failed and TAVILY_API_KEY is missing. Cannot perform fallback search for '{query}'."
 

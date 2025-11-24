@@ -13,7 +13,7 @@ BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
 
 st.set_page_config(page_title="🌍 Global Travel Planner", page_icon="✈️", layout="wide")
 
-# Custom CSS for Premium Look
+# Custom CSS 
 st.markdown("""
 <style>
     /* Global Settings */

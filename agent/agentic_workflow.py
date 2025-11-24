@@ -21,7 +21,7 @@ class GraphBuilder:
             self.model_loader = ModelLoader(model_provider=model_provider)
             self.llm = self.model_loader.load_llm()
 
-            # Initialize Tools
+            # Initializing Tools
             self.weather_tools = WeatherInfoTool()
             self.place_search_tools = PlaceSearchTool()
             self.calculator_tools = CalculatorTool()
@@ -56,9 +56,7 @@ class GraphBuilder:
         try:
             user_messages = state["messages"]
             
-            # Message Trimming Strategy
-            # Keep the last 10 messages to maintain context without hitting token limits
-            # Always keep the system prompt (added below)
+            # (Message Trimming Strategy) Keep the last 10 messages to maintain context without hitting token limits
             MAX_HISTORY = 10
             if len(user_messages) > MAX_HISTORY:
                 # Keep the first message (if it's important context) and the last MAX_HISTORY

@@ -16,4 +16,4 @@ def test_query_endpoint_validation():
     assert response.status_code == 422
 
 # We mock the graph execution to avoid calling actual LLMs during tests
-# This requires more complex mocking, so for now we stick to basic API structure tests.
+# This requires more complex mocking, so for now sticking to basic API structure tests.
