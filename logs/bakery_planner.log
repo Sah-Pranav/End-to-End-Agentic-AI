@@ -145,3 +145,7 @@
 2025-11-23 17:09:01,155 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: dd2aeb05-c26d-487d-8a15-bc437939e63e)
 2025-11-23 18:49:08,680 - INFO - bakery_planner - Graph initialized successfully.
 2025-11-23 18:54:17,407 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-24 13:36:06,096 - INFO - bakery_planner - Graph initialized successfully.
+2025-11-24 13:36:52,155 - INFO - bakery_planner - Received streaming query: hi my name is bob (Thread: b3b5fbe7-5f2e-4677-8835-7da8b7d21551)
+2025-11-24 13:37:11,795 - INFO - bakery_planner - Received streaming query: what is weather in Würzburg? (Thread: b3b5fbe7-5f2e-4677-8835-7da8b7d21551)
+2025-11-24 13:55:47,082 - INFO - bakery_planner - Received streaming query: what is my name? (Thread: b3b5fbe7-5f2e-4677-8835-7da8b7d21551)
