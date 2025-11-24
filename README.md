@@ -25,7 +25,7 @@ You can find project screenshots and demo visuals in the [`/screenshots`](https:
 
 -   Python 3.11+
 -   Docker (optional, for containerization)
--   API Keys for: Google Gemini/Groq, Tavily, OpenWeatherMap
+-   API Keys for: Groq, Google,Tavily,OpenWeatherMap, FOURSQUARE
 
 ### 1. Clone the Repository
 
@@ -43,7 +43,7 @@ GROQ_API_KEY=your_groq_api_key
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
 OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
-FOURSQUARE_API_KEY="your_foursquare_api_key"
+FOURSQUARE_API_KEY="your_foursquare_api_key
 ```
 
 ### 3. Install Dependencies
@@ -95,9 +95,8 @@ streamlit run app.py
 
 ---
 
-## 👨‍💻 Developed By
+## 👨‍💻 Developed By **Pranav**
 
-**Pranav**
 *Passionate about Agentic AI and Full-Stack Development.*
 
 ---
