@@ -25,15 +25,15 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: testagenticplannar.azurecr.io/
-          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_D4A992345CFA474F932B6B21160D3821 }}
-          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_64B2ECBE8F3A40CA98C98D8D025B999A }}
+          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_3A3CAA55627C4DEB80CF1D02D344E69E }}
+          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_D329C53DADBE48528C269A94D2BBFE2F }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: testagenticplannar.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_D4A992345CFA474F932B6B21160D3821 }}/travel-planner:${{ github.sha }}
+          tags: testagenticplannar.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_3A3CAA55627C4DEB80CF1D02D344E69E }}/travel-planner:${{ github.sha }}
           file: ./Dockerfile
 
   deploy:
@@ -49,9 +49,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0BADCA149944401296793CC7E3764259 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D87FC7DC43024187A0D1116FA24F5018 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5498B9899CBA427192DDFC418C16F120 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2A7DDBC0CD974E11B25FD53F85EBFD0A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B068EEE84F5D49A7B8D6B800956E3086 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C11D50DAB59C4D07BC0B32EF0D4799E4 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -59,5 +59,5 @@ jobs:
         with:
           app-name: 'aitravelplannar'
           slot-name: 'Production'
-          images: 'testagenticplannar.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_D4A992345CFA474F932B6B21160D3821 }}/travel-planner:${{ github.sha }}'
+          images: 'testagenticplannar.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_3A3CAA55627C4DEB80CF1D02D344E69E }}/travel-planner:${{ github.sha }}'
           
