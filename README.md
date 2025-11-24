@@ -6,9 +6,9 @@
 
 ## 🚀 Overview
 
-The **Global Travel Planner** is an intelligent, agentic AI application designed to help users plan detailed travel itineraries. Unlike simple chatbots, this agent has **memory** of past conversations and can actively search the web for real-time data.
+The Global Travel Planner is an intelligent, agentic AI application that helps users plan detailed travel itineraries. It has memory of past conversations and can search the web for real-time data, making it more advanced than simple chatbots.
 
-Whether you're looking for the best bakeries in Berlin, luxury hotels in Prague, or hidden gems in Paris, this AI agent can find them, estimate costs, check weather, and even generate a PDF itinerary for you.
+This AI agent helps you quickly find the best bakeries in Berlin, luxury hotels in Prague, or hidden gems in Paris. It estimates costs, checks the weather, and can generate a PDF itinerary for you.
 
 ---
 
@@ -80,7 +80,7 @@ streamlit run app.py
 
 **Live Demo:** 🏠 [https://aitravelplannar.azurewebsites.net](https://aitravelplannar.azurewebsites.net)
 
-> **Note:** The application is hosted on Azure's Student Plan. Deployment link may not be active if the Azure service has been deprovisioned. You can follow the project locally.
+> **Note:** The application is hosted on Azure's Student Plan. The deployment link may not be active if the Azure service has been deprovisioned. You can follow the project locally.
 
 ---
 ## Tech Stack
